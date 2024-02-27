@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% load custom_filters %}
+
+{% block title %}
+    Страницы 
+{% endblock %}
+
+{% block content %}
+<div class="cafedra">
+    <div class="cafedra-list">
+        <a class="button-a" href="/">
+            <p>
+                Главная
+            </p>
+        </a>
+        
+        {% for i in pages %}
+        <a class="button-a" href="{{ i|checkURL }}/{{ i.slug }}">
+            <p>
+                {{ i.page_name }}
+            </p>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

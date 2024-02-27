@@ -1,0 +1,20 @@
+.cafedra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.cafedra-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    width: 60%;
+}
+
+.cafedra-list > .button-a > p {
+    text-align: center;
+    font-family: 'PT Serif', serif;
+    font-size: 25px;
+    border-radius: 35px;
+}

@@ -1,0 +1,17 @@
+* {
+    font-family: 'PT Serif', serif;
+
+}
+
+.first-slide-inner {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.p-fs {
+    padding: 30px;
+    padding-bottom: 50px;
+    line-height: 1.6;
+}

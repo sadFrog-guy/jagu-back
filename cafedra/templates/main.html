@@ -1,0 +1,181 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <title>Юридическая кафедра</title>
+
+    <link rel="stylesheet" href="{% static 'cafedra/css/global.css' %}">
+    <link rel="stylesheet" href="{% static 'cafedra/css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'cafedra/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'cafedra/css/footer.css' %}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header-right">
+                <div class="logo-wrap">
+                    <img src="{% static 'cafedra/img/header_logo.png' %}" alt="" class="header-logo">
+                </div> 
+                
+                <h1 class="heading gold">
+                    Юридический факультет ЖАГУ
+                </h1>
+            </div>
+    
+            <div class="header-left">
+                <nav class="nav">
+                    <div class="nav-item">
+                        <p class="nav-item--text">Текст какой-то</p>
+                    </div>
+
+                    <div class="nav-item">
+                        <p class="nav-item--text">Текст какой-то</p>
+                    </div>
+
+                    <div class="nav-item">
+                        <p class="nav-item--text">Текст какой-то</p>
+                    </div>
+
+                    <div class="nav-item">
+                        <p class="nav-item--text">Текст какой-то</p>
+                    </div>
+
+                    <div class="nav-item">
+                        <p class="nav-item--text">Текст какой-то</p>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="main-image--wrap">
+                <img src="{% static 'cafedra/img/legal-background.png' %}" alt="" class="main-image">
+            </div>
+
+            <div class="main-content">
+                <h1 class="heading-a navy">
+                    {{ main_page.title_university }}
+                    <!-- ЖАЛАЛ-АБАДСКИЙ ГОСУДАРСТВЕННЫЙ
+                    <br>
+                    УНИВЕРСИТЕТ ИМЕНИ
+                    <br>
+                    Б.ОСМОНОВА -->
+                </h1>
+
+                <button class="button-a">
+                    <p>Подробнее</p>
+                </button>
+            </div>
+
+            <div class="main-logo--wrap">
+                <img src="{% static 'cafedra/img/jagu_logo.png' %}" alt="" class="main-logo">
+            </div>
+        </main>
+
+        <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+            <div class="splide__track">
+                  <ul class="splide__list">
+                      <li class="splide__slide main-slide">
+                        <img src="{% static 'cafedra/img/Corpus.png' %}" alt="">
+                      </li>
+                      <li class="splide__slide main-slide">
+                        <img src="{% static 'cafedra/img/Corpus.png' %}" alt="">
+                      </li>
+                      <li class="splide__slide main-slide">
+                        <img src="{% static 'cafedra/img/Corpus.png' %}" alt="">
+                      </li>
+                  </ul>
+            </div>
+        </div>
+
+        <section class="about">
+            <div class="about-left">
+                <div class="about-image--wrap">
+                    <img src="{{ main_page.photo_deportament }}" alt="" class="about-image">
+                </div>
+            </div>
+
+            <div class="about-right">
+                <h4 class="about-heading navy">
+                    {{ main_page.name }}     <!-- Джураев  Абубакир Мухтарович  -->
+                </h4>
+
+                <h5 class="about-subheading">
+                    {{ main_page.position }}  <!-- Заведующий кафедрой -->
+                </h5>
+
+                <p class="about-text">
+                    {{ main_page.short_info }}  <!-- Доктор физико-математических наук, профессор, член Финансового комитета Международного математического союза (IMU), член Грантового комитета XXVII Международного конгресса математиков (ICM), делегат XV-XVII Генеральных Ассамблей Международного математического союза (IMU GA) -->
+                </p>
+
+                <div class="about-links">
+                    <div class="about-link">
+                        <img src="{% static 'cafedra/img/resume.png' %}" alt="" class="about-link--icon">
+
+                        <p class="about-link--text navy">Резюме:</p>
+                        &#32;
+                        <a href="{{ main_page.summary.url }}" class="about-link--url" target="_blank" >Резюме</a>
+                    </div>
+
+                    <div class="about-link">
+                        <img src="{% static 'cafedra/img/resume.png' %}" alt="" class="about-link--icon">
+
+                        <p class="about-link--text navy">
+                            Адрес: {{ main_page.address }}
+                            <!-- Адрес: г. Жалал-Абад, ул. Түмонбая Байзакова, 23  -->
+                        </p>
+                    </div>
+
+                    <div class="about-link">
+                        <img src="{% static 'cafedra/img/phone-call.png' %}" alt="" class="about-link--icon">
+
+                        <p class="about-link--text navy">Телефон: {{ main_page.phone_number }}   <!--Телефон: +996 222-31-01-61 --></p>
+                    </div>
+
+                    <div class="about-link">
+                        <img src="{% static 'cafedra/img/mail.png' %}" alt="" class="about-link--icon">
+
+                        <p class="about-link--text navy">E-mail:</p>
+                        &#32;
+                        <a href="" class="about-link--url">{{ main_page.email }}</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p class="footer-text">
+                Б.Осмонов атындагы ЖАМУнун <a class="gold" href="http://jagu.kg/">башкы сайты</a>
+            </p>
+
+            <p class="footer-text">Автор дизайна и веб-сайта: Адилет Касымбаев ЮК-1-23</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+        document.addEventListener( 'DOMContentLoaded', function() {
+          var splide = new Splide( '.splide', {
+            classes: {
+                arrow : 'splide__arrow main-arrow',
+                prev  : 'splide__arrow--prev main-prev',
+                next  : 'splide__arrow--next main-next',
+            },
+            type: 'loop',
+            autoplay: 'play',
+          });
+          splide.mount();
+        } );
+      </script>
+</body>
+</html>

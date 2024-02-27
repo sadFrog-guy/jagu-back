@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% load custom_filters %}
+{% load static %}
+
+{% block title %}
+    {{ page.page_name }} 
+{% endblock %}
+
+{% block content %}
+<div class="heading-fs">
+    <h1 class="head-fs">{{ page.heading }} </h1> 
+    
+    <div class="heading-fs-bg"></div>
+</div>
+
+<h3 class="h3-fs">{{ page.subheading }}</h3>
+<div class="container">
+<div class="tabs">
+    {% for i in page.file_list.all %}
+    <a href="{{ i.file.url }}" class="tab" title="{{ i.title }}.{{ i.file.name|split:'.'|last }}">
+        <div class="tab-bg">
+            <img src="{% static 'cafedra/img/free-icon-open-folder-3748664.png' %}" alt="" class="icon">
+        </div>
+        <h2 class="tab-title"> {{ i.title|crop_string }} </h2>
+    </a>
+    {% endfor %}
+
+</div>
+</div>
+{% endblock %}

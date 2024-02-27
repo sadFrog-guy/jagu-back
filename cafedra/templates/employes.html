@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{ page.page_name }} 
+{% endblock %}
+
+{% block header %}
+    <h1 class="head-fs">{{ page.header }} </h1> 
+{% endblock %}
+
+{% block subheader %}
+<h3 class="h3-fs">{{ page.subheader }}</h3>
+{% endblock %}
+
+{% block collector %}
+    {% for i in page.employes_list.all %}
+    <div class="centered">
+        <a class="golden-card" href="">
+            <div class="image-wrap">
+                <img src="{{ i.photo.url }}" class="image">
+            </div>
+            <h3 class="name-of-card">{{ i.first_name}} {{ i.second_name }}</h3>
+            <p class="prof-name">{{ i.specialization }}</p>
+        </a>
+    </div>
+    {% endfor %}
+{% endblock %}

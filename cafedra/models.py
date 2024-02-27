@@ -1,7 +1,6 @@
 from django.db import models
 from django.core.validators import FileExtensionValidator
 from ckeditor.fields import RichTextField
-from PIL import Image
 
 default_number = '+996 222-31-01-61'
 
